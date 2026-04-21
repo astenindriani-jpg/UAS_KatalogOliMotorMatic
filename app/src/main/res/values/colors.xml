@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <color name="blue_primary">#2F80ED</color>
+    <color name="blue_soft">#5B9CFF</color>
+    <color name="blue_light">#EAF3FF</color>
+    <color name="blue_card">#DCEBFF</color>
+    <color name="white">#FFFFFF</color>
+    <color name="text_dark">#1F2A37</color>
+    <color name="text_gray">#7B8794</color>
+    <color name="border_soft">#C8DAF7</color>
 </resources>
