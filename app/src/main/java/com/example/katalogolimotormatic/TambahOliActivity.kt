@@ -21,6 +21,11 @@ class TambahOliActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tambah_oli)
 
+        initView()
+        setButtonActions()
+    }
+
+    private fun initView() {
         etMerk = findViewById(R.id.etMerk)
         etNamaProduk = findViewById(R.id.etNamaProduk)
         etJenis = findViewById(R.id.etJenis)
@@ -29,7 +34,9 @@ class TambahOliActivity : AppCompatActivity() {
         etDeskripsi = findViewById(R.id.etDeskripsi)
         btnSimpan = findViewById(R.id.btnSimpan)
         btnReset = findViewById(R.id.btnReset)
+    }
 
+    private fun setButtonActions() {
         btnSimpan.setOnClickListener {
             if (validasiInput()) {
                 Toast.makeText(this, "Data oli berhasil disimpan", Toast.LENGTH_SHORT).show()
@@ -114,5 +121,7 @@ class TambahOliActivity : AppCompatActivity() {
         etHarga.error = null
         etStok.error = null
         etDeskripsi.error = null
+
+        etMerk.requestFocus()
     }
 }
