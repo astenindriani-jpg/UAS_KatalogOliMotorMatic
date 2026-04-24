@@ -1,8 +1,7 @@
-package com.example.katalog_olimotormatic
+package com.example.katalogolimotormatic
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.example.katalogolimotormatic.R
 
 class KatalogActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

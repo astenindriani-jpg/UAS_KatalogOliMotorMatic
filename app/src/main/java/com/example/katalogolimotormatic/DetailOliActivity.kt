@@ -1,4 +1,11 @@
 package com.example.katalogolimotormatic
 
-class DetailOliActivity {
+import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+
+class DetailOliActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_detail_oli)
+    }
 }
