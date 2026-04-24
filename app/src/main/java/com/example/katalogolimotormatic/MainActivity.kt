@@ -2,13 +2,13 @@ package com.example.katalogolimotormatic
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.AppCompatButton
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var btnLihatKatalog: Button
-    private lateinit var btnTambahOli: Button
+    private lateinit var btnLihatKatalog: AppCompatButton
+    private lateinit var btnTambahOli: AppCompatButton
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -18,11 +18,13 @@ class MainActivity : AppCompatActivity() {
         btnTambahOli = findViewById(R.id.btnTambahOli)
 
         btnLihatKatalog.setOnClickListener {
-            startActivity(Intent(this, KatalogActivity::class.java))
+            val intent = Intent(this, KatalogActivity::class.java)
+            startActivity(intent)
         }
 
         btnTambahOli.setOnClickListener {
-            startActivity(Intent(this, TambahOliActivity::class.java))
+            val intent = Intent(this, TambahOliActivity::class.java)
+            startActivity(intent)
         }
     }
 }
