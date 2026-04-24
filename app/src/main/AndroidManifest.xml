@@ -14,10 +14,10 @@
         <activity android:name="com.example.katalogolimotormatic.DetailOliActivity" />
         <activity android:name="com.example.katalogolimotormatic.TambahOliActivity" />
         <activity android:name="com.example.katalogolimotormatic.KatalogActivity" />
+
         <activity
             android:name="com.example.katalogolimotormatic.MainActivity"
             android:exported="true">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
