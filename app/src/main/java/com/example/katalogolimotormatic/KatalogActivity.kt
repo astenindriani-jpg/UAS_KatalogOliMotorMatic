@@ -2,8 +2,10 @@ package com.example.katalogolimotormatic
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatButton
+import com.example.katalogolimotormatic.model.Oli
 
 class KatalogActivity : AppCompatActivity() {
 
@@ -15,15 +17,34 @@ class KatalogActivity : AppCompatActivity() {
 
         btnDetailOli = findViewById(R.id.btnDetailOli)
 
-        btnDetailOli.setOnClickListener {
-            val intent = Intent(this, DetailOliActivity::class.java)
-            intent.putExtra("merk", "Yamalube")
-            intent.putExtra("nama", "Yamalube Matic 10W-40")
-            intent.putExtra("jenis", "Oli Mesin")
-            intent.putExtra("harga", "68000")
-            intent.putExtra("stok", "12")
-            intent.putExtra("deskripsi", "Oli mesin motor matic untuk pemakaian harian.")
-            startActivity(intent)
+        val dataOli = DataOli.listOli
+
+        for (oli in dataOli) {
+            Log.d("DATA_OLI", "${oli.merk} - ${oli.namaProduk}")
         }
+
+        val hasilCari = linearSearchByMerk(dataOli, "Yamalube")
+
+        btnDetailOli.setOnClickListener {
+            if (hasilCari != null) {
+                val intent = Intent(this, DetailOliActivity::class.java)
+                intent.putExtra("merk", hasilCari.merk)
+                intent.putExtra("nama", hasilCari.namaProduk)
+                intent.putExtra("jenis", hasilCari.jenis)
+                intent.putExtra("harga", hasilCari.harga.toString())
+                intent.putExtra("stok", hasilCari.stok.toString())
+                intent.putExtra("deskripsi", hasilCari.deskripsi)
+                startActivity(intent)
+            }
+        }
+    }
+
+    private fun linearSearchByMerk(data: ArrayList<Oli>, keyword: String): Oli? {
+        for (oli in data) {
+            if (oli.merk.equals(keyword, ignoreCase = true)) {
+                return oli
+            }
+        }
+        return null
     }
 }
