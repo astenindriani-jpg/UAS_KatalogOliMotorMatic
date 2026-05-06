@@ -1,6 +1,7 @@
 package com.example.katalogolimotormatic
 
 import android.os.Bundle
+import android.util.Log
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatButton
@@ -27,19 +28,25 @@ class DetailOliActivity : AppCompatActivity() {
         tvDeskripsi = findViewById(R.id.tvDeskripsi)
         btnKembali = findViewById(R.id.btnKembali)
 
-        val merk = intent.getStringExtra("merk") ?: "-"
-        val nama = intent.getStringExtra("nama") ?: "-"
-        val jenis = intent.getStringExtra("jenis") ?: "-"
-        val harga = intent.getStringExtra("harga") ?: "-"
-        val stok = intent.getStringExtra("stok") ?: "-"
-        val deskripsi = intent.getStringExtra("deskripsi") ?: "-"
+        try {
+            val merk = intent.getStringExtra("merk") ?: "-"
+            val nama = intent.getStringExtra("nama") ?: "-"
+            val jenis = intent.getStringExtra("jenis") ?: "-"
+            val harga = intent.getStringExtra("harga") ?: "-"
+            val stok = intent.getStringExtra("stok") ?: "-"
+            val deskripsi = intent.getStringExtra("deskripsi") ?: "-"
 
-        tvMerk.text = "Merk: $merk"
-        tvNama.text = "Nama Produk: $nama"
-        tvJenis.text = "Jenis: $jenis"
-        tvHarga.text = "Harga: Rp $harga"
-        tvStok.text = "Stok: $stok"
-        tvDeskripsi.text = "Deskripsi: $deskripsi"
+            tvMerk.text = "Merk: $merk"
+            tvNama.text = "Nama Produk: $nama"
+            tvJenis.text = "Jenis: $jenis"
+            tvHarga.text = "Harga: Rp $harga"
+            tvStok.text = "Stok: $stok"
+            tvDeskripsi.text = "Deskripsi: $deskripsi"
+
+            Log.d("42430010", "Halaman detail oli dibuka")
+        } catch (e: Exception) {
+            Log.e("42430010", "Error menampilkan detail: ${e.message}")
+        }
 
         btnKembali.setOnClickListener {
             finish()

@@ -1,6 +1,7 @@
 package com.example.katalogolimotormatic
 
 import android.os.Bundle
+import android.util.Log
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -21,11 +22,6 @@ class TambahOliActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tambah_oli)
 
-        initView()
-        setButtonActions()
-    }
-
-    private fun initView() {
         etMerk = findViewById(R.id.etMerk)
         etNamaProduk = findViewById(R.id.etNamaProduk)
         etJenis = findViewById(R.id.etJenis)
@@ -34,17 +30,27 @@ class TambahOliActivity : AppCompatActivity() {
         etDeskripsi = findViewById(R.id.etDeskripsi)
         btnSimpan = findViewById(R.id.btnSimpan)
         btnReset = findViewById(R.id.btnReset)
-    }
 
-    private fun setButtonActions() {
         btnSimpan.setOnClickListener {
-            if (validasiInput()) {
-                Toast.makeText(this, "Data oli berhasil disimpan", Toast.LENGTH_SHORT).show()
+            try {
+                if (validasiInput()) {
+                    Toast.makeText(this, "Data oli berhasil disimpan", Toast.LENGTH_SHORT).show()
+                    Log.d("42430010", "Validasi input berhasil")
+                }
+            } catch (e: Exception) {
+                Toast.makeText(this, "Terjadi kesalahan saat menyimpan data", Toast.LENGTH_SHORT).show()
+                Log.e("42430010", "Error simpan data: ${e.message}")
             }
         }
 
         btnReset.setOnClickListener {
-            resetForm()
+            try {
+                resetForm()
+                Log.d("42430010", "Form berhasil direset")
+            } catch (e: Exception) {
+                Toast.makeText(this, "Terjadi kesalahan saat reset form", Toast.LENGTH_SHORT).show()
+                Log.e("42430010", "Error reset form: ${e.message}")
+            }
         }
     }
 
