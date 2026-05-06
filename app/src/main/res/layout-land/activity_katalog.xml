@@ -7,48 +7,87 @@
     android:padding="16dp">
 
     <LinearLayout
-        android:layout_width="280dp"
+        android:layout_width="300dp"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:paddingEnd="12dp">
+        android:paddingEnd="10dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Daftar Oli"
             android:textColor="@color/text_dark"
-            android:textSize="20sp"
+            android:textSize="22sp"
             android:textStyle="bold" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:background="@drawable/bg_search"
-            android:gravity="center_vertical"
-            android:orientation="horizontal"
-            android:padding="14dp">
+            android:background="@drawable/bg_card"
+            android:orientation="vertical"
+            android:padding="16dp">
 
             <TextView
+                android:id="@+id/tvNamaOli"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="🔍"
-                android:textSize="18sp" />
+                android:text="Nama Oli"
+                android:textColor="@color/text_dark"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/tvMerkOli"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:text="Cari merk atau SAE"
+                android:layout_marginTop="8dp"
+                android:text="Merk Oli"
                 android:textColor="@color/text_gray"
                 android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tvHargaOli"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Harga Oli"
+                android:textColor="@color/text_dark"
+                android:textSize="16sp"
+                android:textStyle="bold" />
         </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnSortNama"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/bg_button"
+            android:backgroundTint="@null"
+            android:stateListAnimator="@null"
+            android:text="Urutkan Nama"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnSortHarga"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/bg_button"
+            android:backgroundTint="@null"
+            android:stateListAnimator="@null"
+            android:text="Urutkan Harga"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnDetailOli"
             android:layout_width="match_parent"
             android:layout_height="48dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="12dp"
             android:background="@drawable/bg_button"
             android:backgroundTint="@null"
             android:stateListAnimator="@null"
@@ -67,32 +106,65 @@
         android:padding="20dp">
 
         <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Preview Detail"
+            android:textColor="@color/text_dark"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/blue_light"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="🛢️"
+                android:textSize="40sp" />
+        </LinearLayout>
+
+        <TextView
             android:id="@+id/tvNamaPreview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
             android:text="Yamalube Matic 10W-40"
             android:textColor="@color/text_dark"
             android:textSize="20sp"
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/tvJenisPreview"
+            android:id="@+id/tvMerkPreview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="Oli mesin motor matic • 1 Liter"
+            android:layout_marginTop="10dp"
+            android:text="Merk: Yamalube"
             android:textColor="@color/text_gray"
-            android:textSize="14sp" />
+            android:textSize="15sp" />
 
         <TextView
             android:id="@+id/tvHargaPreview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="10dp"
             android:text="Rp 68.000"
             android:textColor="@color/text_dark"
             android:textSize="18sp"
             android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvDeskripsiPreview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Oli mesin motor matic untuk pemakaian harian."
+            android:textColor="@color/text_gray"
+            android:textSize="14sp" />
     </LinearLayout>
 
 </LinearLayout>
