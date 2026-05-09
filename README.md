@@ -83,7 +83,7 @@ Bubble Sort digunakan untuk mengurutkan data oli:
 ### 9. Screenshot Logcat
 Tambahkan screenshot Logcat Android Studio yang menampilkan NIM **42430010** di bawah ini:
 
-![Screenshot Logcat](images/logcat.png)
+![Screenshot Logcat](screenshot/logcat.png)
 
 ## Teknologi yang Digunakan
 • **Kotlin**
